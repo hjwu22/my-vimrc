@@ -19,6 +19,7 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bz
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
  
-
+set tabstop=4    
+set softtabstop=4
 set background=dark
 colorscheme wombat
