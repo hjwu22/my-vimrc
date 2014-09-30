@@ -23,3 +23,11 @@ set tabstop=4
 set softtabstop=4
 set background=dark
 colorscheme wombat
+
+"qemu
+set secure
+set exrc
+set expandtab
+set shiftwidth=4
+set smarttab
+
