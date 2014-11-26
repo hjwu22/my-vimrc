@@ -39,3 +39,15 @@ if has("cscope")
     endif
     set csverb            
 endif
+
+"ctags
+"map  < F4 >  :!ctags -R --laguanges=c,c++ --if0=yes -kinds =+p  --fields =+iaS  --extra =+q . < CR > < CR > 
+set  cscopequickfix = s -,c-,d-,i-,t-,e-    
+nmap  < C- @ > s :cs find s  < CR > =expand(" < cword > ") < CR > <CR >  
+nmap  < C- @ > g :cs find g  < CR > =expand(" < cword > ") < CR > <CR >  
+nmap  < C- @ > c :cs find c  < CR > =expand(" < cword > ") < CR > <CR >  
+nmap  < C- @ > t :cs find t  < CR > =expand(" < cword > ") < CR > <CR >  
+nmap  < C- @ > e :cs find e  < CR > =expand(" < cword > ") < CR > <CR >  
+nmap  < C- @ > f :cs find f  < CR > =expand(" < cfile > ") < CR > <CR >  
+nmap  < C- @ > i :cs find i ^ < CR > =expand(" < cfile > ") < CR >$ < CR >  
+nmap  < C- @ > d :cs find d  < CR > =expand(" < cword > ") < CR > <CR >
