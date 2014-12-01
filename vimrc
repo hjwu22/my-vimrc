@@ -19,6 +19,7 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
+map < F2 > : NERDTreeToggle <CR>
 endif
 
 set tabstop=4    
@@ -95,7 +96,6 @@ NeoBundle 'vim-scripts/sudo.vim'
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
-
 
 "qemu
 set secure
