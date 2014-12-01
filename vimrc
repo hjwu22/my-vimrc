@@ -41,9 +41,8 @@ if has("cscope")
 endif
 
 "ctags
-map  < F4 >  :!ctags -R --laguanges=c,c++ --if0=yes -kinds =+p  --exclude=.git --fields =+iaS  --extra =+q . < CR > < CR > 
-"set  cscopequickfix = s -,c-,d-,i-,t-,e-    
-
+map < F4 >  :!ctags -R --laguanges=c,c++ --if0=yes -kinds =+p  --exclude=.git --fields =+iaS  --extra =+q . < CR > < CR > 
+map < F3 >	:Tlist < CR >
 nmap  < C- @ > s :cs find s  < CR > =expand(" < cword > ") < CR > <CR >  
 nmap  < C- @ > g :cs find g  < CR > =expand(" < cword > ") < CR > <CR >  
 nmap  < C- @ > c :cs find c  < CR > =expand(" < cword > ") < CR > <CR >  
@@ -94,3 +93,5 @@ NeoBundle 'vim-scripts/sudo.vim'
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+
