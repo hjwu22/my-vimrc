@@ -8,6 +8,7 @@ set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 filetype plugin indent on
  
 " Nerdtree
+if has("autocmd")
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 let NERDTreeShowBookmarks=1
@@ -18,7 +19,8 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
- 
+endif
+
 set tabstop=4    
 set softtabstop=4
 set background=dark
@@ -95,3 +97,14 @@ NeoBundle 'vim-scripts/sudo.vim'
 NeoBundleCheck
 
 
+"qemu
+set secure
+set exrc
+set expandtab
+set shiftwidth=4
+set smarttab
+
+"move cursor to previous position
+if has("autocmd")
+      au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
