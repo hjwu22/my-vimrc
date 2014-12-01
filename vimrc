@@ -41,8 +41,9 @@ if has("cscope")
 endif
 
 "ctags
-"map  < F4 >  :!ctags -R --laguanges=c,c++ --if0=yes -kinds =+p  --fields =+iaS  --extra =+q . < CR > < CR > 
+map  < F4 >  :!ctags -R --laguanges=c,c++ --if0=yes -kinds =+p  --exclude=.git --fields =+iaS  --extra =+q . < CR > < CR > 
 set  cscopequickfix = s -,c-,d-,i-,t-,e-    
+
 nmap  < C- @ > s :cs find s  < CR > =expand(" < cword > ") < CR > <CR >  
 nmap  < C- @ > g :cs find g  < CR > =expand(" < cword > ") < CR > <CR >  
 nmap  < C- @ > c :cs find c  < CR > =expand(" < cword > ") < CR > <CR >  
@@ -51,3 +52,43 @@ nmap  < C- @ > e :cs find e  < CR > =expand(" < cword > ") < CR > <CR >
 nmap  < C- @ > f :cs find f  < CR > =expand(" < cfile > ") < CR > <CR >  
 nmap  < C- @ > i :cs find i ^ < CR > =expand(" < cfile > ") < CR >$ < CR >  
 nmap  < C- @ > d :cs find d  < CR > =expand(" < cword > ") < CR > <CR >
+
+"you complete me
+"
+
+"neoBundle
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
+if has('vim_starting')
+    set nocompatible               " Be iMproved
+
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+let g:make = 'gmake'
+if system('uname -o') =~ '^GNU/'
+    let g:make = 'make'
+endif
+NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
