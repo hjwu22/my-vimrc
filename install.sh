@@ -40,3 +40,7 @@ echo ".. Successfully copied vim/ to ~/.vim/"
 echo ""
 echo "Your sachet has successfully been installed. Restart all Vim instances."
 echo "Thank you for using sachet"
+
+sudo apt-get install -y ctags cscope cmake 
+cd ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+

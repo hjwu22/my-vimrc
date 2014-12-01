@@ -42,7 +42,7 @@ endif
 
 "ctags
 map  < F4 >  :!ctags -R --laguanges=c,c++ --if0=yes -kinds =+p  --exclude=.git --fields =+iaS  --extra =+q . < CR > < CR > 
-set  cscopequickfix = s -,c-,d-,i-,t-,e-    
+"set  cscopequickfix = s -,c-,d-,i-,t-,e-    
 
 nmap  < C- @ > s :cs find s  < CR > =expand(" < cword > ") < CR > <CR >  
 nmap  < C- @ > g :cs find g  < CR > =expand(" < cword > ") < CR > <CR >  
@@ -67,11 +67,11 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-let g:make = 'gmake'
-if system('uname -o') =~ '^GNU/'
-    let g:make = 'make'
-endif
-NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
+"let g:make = 'gmake'
+"if system('uname -o') =~ '^GNU/'
+"    let g:make = 'make'
+"endif
+"NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -88,7 +88,9 @@ call neobundle#end()
 
 " Required:
 filetype plugin indent on
-
+NeoBundle 'https://github.com/Valloric/YouCompleteMe.git'
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'vim-scripts/sudo.vim'
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
