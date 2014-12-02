@@ -107,10 +107,12 @@ if has("autocmd")
 endif
 
 "key mappings
-map <F2> :NERDTreeToggle <CR>
+map <F2> :TlistToggle <CR>
 "<F3> call AutotagsAdd()"
 "<F4> call AutotagsUpdate()
-map <F5> :TlistToggle <CR>
+map <F5> :NERDTreeToggle <CR>
+
+"effective?
 nmap  <C-@> s :cs find s  <CR> =expand(" < cword > ") <CR> <CR>  
 nmap  <C-@> g :cs find g  <CR> =expand(" < cword > ") <CR> <CR>  
 nmap  <C-@> c :cs find c  <CR> =expand(" < cword > ") <CR> <CR>  
