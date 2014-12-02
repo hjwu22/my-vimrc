@@ -32,9 +32,15 @@ set exrc
 set expandtab
 set shiftwidth=4
 set smarttab
+
 "folding
+set fdm=syntax
 set foldnestmax=3
 
+"line number
+set number
+
+"FixME: following statements might lost effection due to ycm
 "scope, provide by csdn blog
 if has("cscope")
     set csto=0
