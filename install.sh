@@ -48,4 +48,4 @@ vim -c q!
 if [ ! -f ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_client_support.so ]; then
     cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 fi
-
+cd ~/.vim/bundle/vimproc.vim/ && make

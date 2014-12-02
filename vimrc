@@ -11,19 +11,29 @@ filetype plugin indent on
 if has("autocmd")
     autocmd VimEnter * NERDTree
     autocmd VimEnter * wincmd p
-    let NERDTreeShowBookmarks=1
-    let NERDTreeChDirMode=0
-    let NERDTreeQuitOnOpen=0
-    let NERDTreeMouseMode=2
-    let NERDTreeShowHidden=1
-    let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
-    let NERDTreeKeepTreeInNewTab=1
-    let g:nerdtree_tabs_open_on_gui_startup=0
 endif
+let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=0
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.pyc','\~$','\.swo$','\.swp$','\.git','\.hg','\.svn','\.bzr']
+let NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
+let g:NERDTreeWinPos = "right"
 set tabstop=4    
 set softtabstop=4
 set background=dark
 colorscheme wombat
+
+"qemu
+set secure
+set exrc
+set expandtab
+set shiftwidth=4
+set smarttab
+"folding
+set foldnestmax=3
 
 "scope, provide by csdn blog
 if has("cscope")
@@ -92,8 +102,9 @@ endif
 
 "key mappings
 map <F2> :NERDTreeToggle <CR>
-map <F4> :!ctags -R --laguanges=c,c++ --if0=yes -kinds =+p  --exclude=.git --fields =+iaS  --extra =+q . <CR> <CR>  
-map <F3> :Tlist <CR>
+"<F3> call AutotagsAdd()"
+"<F4> call AutotagsUpdate()
+map <F5> :TlistToggle <CR>
 nmap  <C-@> s :cs find s  <CR> =expand(" < cword > ") <CR> <CR>  
 nmap  <C-@> g :cs find g  <CR> =expand(" < cword > ") <CR> <CR>  
 nmap  <C-@> c :cs find c  <CR> =expand(" < cword > ") <CR> <CR>  
