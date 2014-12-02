@@ -20,7 +20,6 @@ if has("autocmd")
     let NERDTreeKeepTreeInNewTab=1
     let g:nerdtree_tabs_open_on_gui_startup=0
 endif
-map <F2> :NERDTreeToggle <CR>
 set tabstop=4    
 set softtabstop=4
 set background=dark
@@ -40,18 +39,6 @@ if has("cscope")
     endif
     set csverb            
 endif
-
-"ctags
-map <F4>  :!ctags -R --laguanges=c,c++ --if0=yes -kinds =+p  --exclude=.git --fields =+iaS  --extra =+q . <CR> <CR>  
-map <F3>	:Tlist <CR>
-nmap  <C-@> s :cs find s  < CR > =expand(" < cword > ") <CR> <CR>  
-nmap  <C-@> g :cs find g  < CR > =expand(" < cword > ") <CR> <CR>  
-nmap  <C-@> c :cs find c  < CR > =expand(" < cword > ") <CR> <CR>  
-nmap  <C-@> t :cs find t  < CR > =expand(" < cword > ") <CR> <CR>  
-nmap  <C-@> e :cs find e  < CR > =expand(" < cword > ") <CR> <CR>  
-nmap  <C-@> f :cs find f  < CR > =expand(" < cfile > ") <CR> <CR>  
-nmap  <C-@> i :cs find i ^ < CR > =expand(" < cfile > ") <CR>$ <CR>  
-nmap  <C-@> d :cs find d  < CR > =expand(" < cword > ") <CR> <CR>
 
 "you complete me
 "
@@ -102,3 +89,18 @@ set smarttab
 if has("autocmd")
       au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+"key mappings
+map <F2> :NERDTreeToggle <CR>
+map <F4> :!ctags -R --laguanges=c,c++ --if0=yes -kinds =+p  --exclude=.git --fields =+iaS  --extra =+q . <CR> <CR>  
+map <F3> :Tlist <CR>
+nmap  <C-@> s :cs find s  <CR> =expand(" < cword > ") <CR> <CR>  
+nmap  <C-@> g :cs find g  <CR> =expand(" < cword > ") <CR> <CR>  
+nmap  <C-@> c :cs find c  <CR> =expand(" < cword > ") <CR> <CR>  
+nmap  <C-@> t :cs find t  <CR> =expand(" < cword > ") <CR> <CR>  
+nmap  <C-@> e :cs find e  <CR> =expand(" < cword > ") <CR> <CR>  
+nmap  <C-@> f :cs find f  <CR> =expand(" < cfile > ") <CR> <CR>  
+nmap  <C-@> i :cs find i ^ <CR> =expand(" < cfile > ") <CR>$ <CR>  
+nmap  <C-@> d :cs find d  <CR> =expand(" < cword > ") <CR> <CR>
+
+
