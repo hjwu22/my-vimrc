@@ -86,10 +86,13 @@ call neobundle#end()
 
 " Required:
 filetype plugin indent on
+
+"install bundles
 NeoBundle 'https://github.com/Valloric/YouCompleteMe.git'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'vim-scripts/sudo.vim'
+NeoBundle 'wesleyche/SrcExpl'
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
