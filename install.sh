@@ -41,9 +41,11 @@ echo ""
 echo "Your sachet has successfully been installed. Restart all Vim instances."
 echo "Thank you for using sachet"
 
-sudo apt-get install -y ctags cscope cmake 
+sudo apt-get install -y ctags cscope cmake python2.7-dev 
+
+vim -c q!
 
 if [ ! -f ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_client_support.so ]; then
-    cd ~/.vim/bundle/YouCompleteMe
-    ./install.sh --clang-completer
+    cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
 fi
+
