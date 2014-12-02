@@ -28,7 +28,6 @@ colorscheme wombat
 
 "scope, provide by csdn blog
 if has("cscope")
-    set csprg=/usr/local/bin/cscope
     set csto=0
     set cst
     set nocsverb
