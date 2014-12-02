@@ -68,11 +68,6 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-"let g:make = 'gmake'
-"if system('uname -o') =~ '^GNU/'
-"    let g:make = 'make'
-"endif
-"NeoBundle 'Shougo/vimproc.vim', {'build': {'unix': g:make}}
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -90,6 +85,7 @@ call neobundle#end()
 " Required:
 filetype plugin indent on
 NeoBundle 'https://github.com/Valloric/YouCompleteMe.git'
+NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'vim-scripts/sudo.vim'
 " If there are uninstalled bundles found on startup,
