@@ -41,7 +41,7 @@ echo ""
 echo "Your sachet has successfully been installed. Restart all Vim instances."
 echo "Thank you for using sachet"
 
-sudo apt-get install -y ctags cscope cmake python2.7-dev 
+sudo apt-get install -y ctags cscope cmake python2.7-dev vim-gui-common 
 
 vim -c q!
 

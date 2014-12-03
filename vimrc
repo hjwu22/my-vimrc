@@ -11,6 +11,7 @@ filetype plugin indent on
 if has("autocmd")
     autocmd VimEnter * NERDTree
     autocmd VimEnter * wincmd p
+    autocmd VimEnter * call AutotagsCleanup()
 endif
 let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=0
@@ -39,6 +40,9 @@ set foldnestmax=3
 
 "line number
 set number
+
+"clipboard
+set clipboard=unnamed
 
 "FixME: following statements might lost effection due to ycm
 "scope, provide by csdn blog
@@ -87,12 +91,14 @@ call neobundle#end()
 " Required:
 filetype plugin indent on
 
-"install bundles
+"bundles
 NeoBundle 'https://github.com/Valloric/YouCompleteMe.git'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'wesleyche/SrcExpl'
+NeoBundle 'https://github.com/hjwu22/vim-autotags'
+
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
@@ -109,11 +115,39 @@ if has("autocmd")
       au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+"autoTags
+"for kernel
+let g:autotags_no_global = 1
+
+"for userspace project
+"let g:autotags_no_global = 1 
+
+
+"srcExpl
+let g:SrcExpl_winHeight = 8
+"Set 100 ms for refreshing the Source Explorer
+let g:SrcExpl_refreshTime = 300 
+"Set Enter key to jump into the exact definition context
+"let g:SrcExpl_jumpKey = "<ENTER>" 
+
+"In order to avoid conflicts, the Source Explorer should know what plugins
+"except itself are using buffers. And you need add their buffer names into  
+"below listaccording to the command ":buffers!"
+ 
+let g:SrcExpl_pluginList = [ 
+         \ "__Tag_List__", 
+         \ "_NERD_tree_" 
+     \ ] 
+let g:SrcExpl_isUpdateTags = 0
+
+
 "key mappings
 map <F2> :TlistToggle <CR>
 "<F3> call AutotagsAdd()"
 "<F4> call AutotagsUpdate()
 map <F5> :NERDTreeToggle <CR>
+nmap <F6> :SrcExplToggle <CR>
+nmap <C-I> <C-W>j:call g:SrcExpl_Jump<CR> 
 
 "effective?
 nmap  <C-@> s :cs find s  <CR> =expand(" < cword > ") <CR> <CR>  
