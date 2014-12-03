@@ -9,9 +9,10 @@ filetype plugin indent on
  
 " Nerdtree
 if has("autocmd")
-    autocmd VimEnter * NERDTree
+    "autocmd VimEnter * NERDTree
     autocmd VimEnter * wincmd p
     autocmd VimEnter * call AutotagsCleanup()
+    autocmd FileType c,cpp TlistToggle
 endif
 let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=0
