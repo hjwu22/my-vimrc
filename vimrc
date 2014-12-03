@@ -111,17 +111,20 @@ set expandtab
 set shiftwidth=4
 set smarttab
 
-"move cursor to previous position
+"move cursor to previous position, cleanup non-exist tags
+"open taglist if file type is c or cpp
 if has("autocmd")
-      au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    autocmd VimEnter * call AutotagsCleanup()
+    autocmd FileType c,cpp TlistToggle
+e
 endif
 
-"autoTags
-"for kernel
+"linux kernel 
 let g:autotags_no_global = 1
 
 "for userspace project
-"let g:autotags_no_global = 1 
+"let g:autotags_no_global = 0 
 
 
 "srcExpl
