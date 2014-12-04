@@ -11,8 +11,6 @@ filetype plugin indent on
 if has("autocmd")
     "autocmd VimEnter * NERDTree
     autocmd VimEnter * wincmd p
-    autocmd VimEnter * call AutotagsCleanup()
-    autocmd FileType c,cpp TlistToggle
 endif
 let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=0
@@ -116,8 +114,7 @@ set smarttab
 if has("autocmd")
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
     autocmd VimEnter * call AutotagsCleanup()
-    autocmd FileType c,cpp TlistToggle
-e
+    autocmd FileType c,cpp Tlist
 endif
 
 "linux kernel 
