@@ -100,6 +100,7 @@ NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'wesleyche/SrcExpl'
 NeoBundle 'https://github.com/hjwu22/vim-autotags'
+NeoBundle 'scrooloose/syntastic'
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.

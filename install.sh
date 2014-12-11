@@ -41,11 +41,11 @@ echo ""
 echo "Your sachet has successfully been installed. Restart all Vim instances."
 echo "Thank you for using sachet"
 
-sudo apt-get install -y ctags cscope cmake python2.7-dev vim-gui-common 
+sudo apt-get install -y ctags cscope cmake python2.7-dev vim-gui-common libboost-python-dev libboost-filesystem-dev libboost-system-dev libboost-regex-dev libboost-thread-dev libclang-dev 
 
 vim -c q!
 
 if [ ! -f ~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_client_support.so ]; then
-    cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer
+    cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer --system-libclang --system-boost
 fi
 cd ~/.vim/bundle/vimproc.vim/ && make
