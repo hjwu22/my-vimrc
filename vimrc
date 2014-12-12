@@ -177,22 +177,22 @@ nmap  <C-a>i :cs find i ^<CR> =expand(" < cfile > ") <CR>$<CR>
 nmap  <C-a>d :cs find d  <CR> =expand(" < cword > ") <CR> <CR>
 
 "result shown in split horizontal window
-nmap <C-z>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-z>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-z>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-s>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-s>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 
 "result shown in split horizontal window
-nmap <C-z><C-z>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z><C-z>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z><C-z>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z><C-z>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z><C-z>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-z><C-z>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-z><C-z>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-z><C-z>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s><C-s>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s><C-s>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s><C-s>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s><C-s>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s><C-s>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-s><C-s>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-s><C-s>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-s><C-s>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 
